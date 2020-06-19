@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+html{
+    background-color:#f2f2f2;
+	font-family: "Montserrat", sans-serif !important;
+}
+body {
+
+
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* Nav Bar Css starts here */
+#nav-bar {
+    height: 95px;
+    background: #333545;
+    
+}
+
+.main-nav-bar-container {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav-bar-container img {
+    width: 130px;
+    height: 75px;
+    color: white;
+    margin-left: 10px;
+}
+
+.main-nav-bar-container .search-section {
+    margin-left: 50px;
+    background: white;
+    padding: 1px 1px 1px 15px;
+    border-radius: 5px;
+}
+
+.main-nav-bar-container i {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.288);
+}
+
+.main-nav-bar-container input[type="text"] {
+    height: 40px;
+    width: 850px;
+    color: black;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Montserrat,sans-serif;
+    font-weight: 100;
+    padding: 1px 1px 1px 10px;
+}
+
+.main-nav-bar-container .sign-in-btn {
+    margin-left: 80px;
+    font-size: 12px;
+    padding: 3px 9px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: inherit; 
+    border: 1px solid white;
+    color:white;
+    border-style: line;
+    cursor: pointer;
+}
+
+.main-nav-bar-container .fa-bars {
+    color: rgba(216, 216, 216, 0.438);
+    font-size: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+
+}
+
+
+/* Slider Css */
+#sign-in-slide {
+    z-index: 2;
+
+    position: absolute;
+    height: 100%;
+    width: 25%;
+    background: white;
+    display: none;
+    top: 0;
+    right: 0;
+    transition: all 0.2s;
+    box-shadow: -2px 0px 8px 0px rgba(0,0,0,0.75);
+}
+
+.slide-main-container {
+    display: flex;
+    align-items: center;
+    background: #333545;
+    height: 100px;
+    color: white;
+}
+
+
+.slide-main-container 
+.sign-in-up-logo 
+i {
+    color: white;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.slide-main-container 
+span 
+i {
+    color: rgb(228, 212, 212);
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+.slide-main-container 
+.sign-in-up-text div {
+    font-family: Montserrat, sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+}
+
+.slide-main-container 
+.sign-in-up-text div 
+button {
+    margin-top: 5px;
+    font-size: 12px;
+    height: max-content;
+    padding: 3px 9px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: inherit; 
+    border: 1px solid rgb(0, 119, 255);
+    color:rgb(0, 119, 255);
+    border-style: line;
+    cursor: pointer;
+}
+
+.slide-main-container 
+.sign-in-up-text
+.guest-text {
+    color: rgba(194, 194, 194, 0.555);
+    text-align: center;
+}
+
+.slide-content div {
+    padding: 20px 15px;
+    border-bottom: 1px solid rgb(219, 216, 216);
+}
+
+.slide-content div a {
+    color: black;
+    font-family: Montserrat, sans-serif;
+    font-weight: 100;
+    font-size: 12px;
+}
+
+.slide-content div:hover {
+    background: rgb(243, 239, 239);
+    cursor: pointer;
+}
+
+/* Sub Events Css starts here */
+.sub-nav-bar-container {
+    display: flex;
+    background-color: #1f2533;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* justify-content: center; */
+}
+
+.sub-nav-bar-container .main-events {
+
+    margin-right: 400px;
+}
+
+.sub-nav-bar-container 
+a {
+
+    color: white;
+    font-weight: 100;
+    font-size: 14px;
+}
+
+.sub-nav-bar-container
+.main-events 
+a {
+
+    margin-left: 20px;
+}
+
+.sub-nav-bar-container
+.sub-events 
+a {
+
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+
+/* SLIDESHOW */
+.carousel{
+    margin-top: 1.5rem;
+    text-align: center;
+    padding: 10px;
+    background-color: white;
+    position: absolute;
+}
+.carousel-inner img {
+    width: 50%;
+    height: 320px;
+
+  }
+  .carousel-control-next, .carousel-control-prev {
+    overflow: hidden;
+    opacity: .99!important;
+}
+.carousel-control-prev-icon{
+    filter: drop-shadow(32px 0px 0px grey);
+    transform: translate(-32px, 0px);
+    opacity: .8;
+
+}
+.carousel-control-next-icon{
+    filter: drop-shadow(-32px 0px 0px grey);
+    transform: translate(32px, 0px);
+    opacity: .8;
+    
+}
