@@ -4,14 +4,15 @@ import { Router } from './router.js';
 
 window.onload = function () {
   class Model {
-    constructor() { 
-      var users=new HashTable(10);
-      
+    constructor() {
+      var users = new HashTable(10);
+
     }
   }
 
   class View {
     constructor() {
+      console.log("ready");
       const slideOpener = document.querySelector('.slide-opener');
       const slideCloser = document.querySelector('.slide-closer');
       slideOpener.addEventListener('click', openSlider);
@@ -27,6 +28,7 @@ window.onload = function () {
         slider.style.display = "none";
       }
       // this.routing();
+      this.signInModal();
     }
 
     routing = function () {
@@ -34,10 +36,96 @@ window.onload = function () {
       router.addRoute("./ticket-booking.html", "ticket");
       // router.displayRoutes();
     }
-    // signUp{
+    
+    //Modal Start
+    signInModal = function () {
+      var modal = document.getElementById("signinModal");
+      var btn = document.getElementById("modalTrigger");
+      var closeModal = document.getElementsByClassName("closeModal")[0];
 
-    // }
+      btn.onclick = function () {
+        modal.style.display = "block";
+      }
 
+      closeModal.onclick = function () {
+        modal.style.display = "none";
+        signInSection.style.display = "block";
+        signUpSection.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      // window.onclick = function(event) {
+      //   if (event.target == modal) {
+      //     modal.style.display = "none";
+      //   }
+      // }
+      var signInTab = document.getElementById("signIn");
+      var signUpTab = document.getElementById("signUp");
+
+      var signInSection = document.getElementById("sign-in-section");
+      var signUpSection = document.getElementById("sign-up-section");
+
+      var signInSubmit = document.getElementById("sign-in-submit");
+      var signInEmail = document.getElementById("signInEmail");
+      var signInPassword = document.getElementById("signInPassword");
+
+      var signUpSubmit = document.getElementById("sign-up-submit");
+      var signUpName = document.getElementById("signUpName");
+      var signUpEmail = document.getElementById("signUpEmail");
+      var signUpPassword = document.getElementById("signUpPassword");
+
+      signUpTab.addEventListener('click', function () {
+        event.preventDefault();
+        signInSection.style.display = "none";
+        signUpSection.style.display = "block";
+      }, false);
+
+      signInTab.addEventListener('click', function () {
+        event.preventDefault();
+
+        signInSection.style.display = "block";
+        signUpSection.style.display = "none";
+      }, false);
+
+
+      //Valid email test regex
+      function validateEmail(email) {
+        const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+      }
+
+      signInSubmit.addEventListener('click', function () {
+        if (signInEmail.value == "" && signInPassword.value == "") {
+          alert('Please enter email and password.');
+          event.preventDefault();
+          return false;
+        }
+        else if (!validateEmail(signInEmail.value)) {
+          alert('Please enter a valid email.');
+          event.preventDefault();
+          return false;
+        }
+        // else{
+
+        // }
+      });
+
+      signUpSubmit.addEventListener('click', function () {
+        if (signUpEmail.value == "" && signUpPassword.value == "") {
+          alert('Please enter email and password.');
+          event.preventDefault();
+          return false;
+        }
+        else if (!validateEmail(signUpEmail.value)) {
+          alert('Please enter a valid email.');
+          event.preventDefault();
+          return false;
+        }
+        // else{
+          
+        // }
+      });
+    }// Modal End
 
 
 
